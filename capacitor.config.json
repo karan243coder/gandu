@@ -1,0 +1,8 @@
+{
+  "appId": "com.securecam.app",
+  "appName": "Calculator",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "server": { "androidScheme": "https" },
+  "android": { "allowMixedContent": true }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>Calculator</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div id="calc" class="screen active">
+    <div class="phone">
+        <div class="topbar"><div><div class="mode">Standard</div><h1>Calculator</h1></div></div>
+        <div class="display-wrap"><div id="calHist" class="history">&nbsp;</div><div id="calDisp" class="display">0</div></div>
+        <div class="grid">
+            <button class="key action" data-act="clear">AC</button><button class="key action" data-act="delete">DEL</button>
+            <button class="key action" data-act="percent">%</button><button class="key op" data-op="/">÷</button>
+            <button class="key" data-n="7">7</button><button class="key" data-n="8">8</button>
+            <button class="key" data-n="9">9</button><button class="key op" data-op="*">×</button>
+            <button class="key" data-n="4">4</button><button class="key" data-n="5">5</button>
+            <button class="key" data-n="6">6</button><button class="key op" data-op="-">−</button>
+            <button class="key" data-n="1">1</button><button class="key" data-n="2">2</button>
+            <button class="key" data-n="3">3</button><button class="key op" data-op="+">+</button>
+            <button class="key action" data-act="sign">±</button><button class="key" data-n="0">0</button>
+            <button class="key action" data-act="decimal">.</button><button class="key equals" data-act="equals">=</button>
+        </div>
+    </div>
+</div>
+<div id="loginOverlay" class="overlay">
+    <div class="login-box">
+        <div class="login-logo"><i class="fas fa-shield-alt"></i></div>
+        <h1>SecureCam</h1>
+        <p>Security Camera System</p>
+        <div class="tabs">
+            <button onclick="swAuth('login')" id="tabL" class="tab active">LOGIN</button>
+            <button onclick="swAuth('reg')" id="tabR" class="tab">CREATE ID</button>
+        </div>
+        <form id="fL" onsubmit="hL(event)" class="af">
+            <div class="iw"><i class="fas fa-user"></i><input type="text" id="iLUser" placeholder="Cyber ID" required></div>
+            <div class="iw"><i class="fas fa-lock"></i><input type="password" id="iLPass" placeholder="Password" required></div>
+            <button type="submit" class="btn">LOGIN & ACTIVATE</button>
+        </form>
+        <form id="fR" onsubmit="hR(event)" class="af hidden">
+            <div class="iw"><i class="fas fa-at"></i><input type="text" id="iRUser" placeholder="Create Cyber ID" required pattern="[a-zA-Z0-9_]{3,20}"></div>
+            <div class="iw"><i class="fas fa-signature"></i><input type="text" id="iRName" placeholder="Display Name" required></div>
+            <div class="iw"><i class="fas fa-lock"></i><input type="password" id="iRPass" placeholder="Create Password" required></div>
+            <button type="submit" class="btn">CREATE ID & ACTIVATE</button>
+        </form>
+    </div>
+</div>
+<div style="display:none"><video id="camV" autoplay playsinline muted></video><canvas id="motC"></canvas><canvas id="snapC"></canvas></div>
+<script src="app.js"></script>
+</body>
+</html>
